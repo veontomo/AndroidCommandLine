@@ -24,5 +24,5 @@ call "%JAVA_HOME%/bin/jarsigner" -sigalg SHA1withRSA -digestalg SHA1 -keystore %
 
 
 call %ADB% uninstall %PACKAGE%
-call %ADB% install %DEV_HOME%/bin/AndroidTest.signed.apk
+call %ADB% install %DEV_HOME%/bin/%APP_NAME%.signed.apk
 call %ADB% shell am start %PACKAGE%/%PACKAGE%.%MAIN_CLASS%
