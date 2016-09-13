@@ -1,3 +1,4 @@
 <resources>
-    <string name="hello">Hello test app!</string>
+    <string name="fibonacci">Fibonacci</string>
+    <string name="f">F_</string>
 </resources>

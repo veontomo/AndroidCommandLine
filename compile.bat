@@ -19,7 +19,7 @@ call %AAPT_PATH% package -f -m -S %DEV_HOME%\res -J %DEV_HOME%\src -M %DEV_HOME%
 
 call %AAPT_PATH% package -f -M %DEV_HOME%/AndroidManifest.xml -S %DEV_HOME%/res -I %ANDROID_JAR% -F %DEV_HOME%/bin/%APP_NAME%.unsigned.apk %DEV_HOME%/bin
 
-call "%JAVA_HOME%/bin/keytool" -genkey -validity 10000 -dname "CN=AndroidDebug, O=Android, C=ITA" -keystore %KEYSTORE_PATH% -storepass android -keypass android -alias androiddebugkey -keyalg RSA -v -keysize 2048
+REM call "%JAVA_HOME%/bin/keytool" -genkey -validity 10000 -dname "CN=AndroidDebug, O=Android, C=ITA" -keystore %KEYSTORE_PATH% -storepass android -keypass android -alias androiddebugkey -keyalg RSA -v -keysize 2048
 call "%JAVA_HOME%/bin/jarsigner" -sigalg SHA1withRSA -digestalg SHA1 -keystore %KEYSTORE_PATH% -storepass android -keypass android -signedjar %DEV_HOME%/bin/%APP_NAME%.signed.apk %DEV_HOME%/bin/%APP_NAME%.unsigned.apk androiddebugkey
 
 
